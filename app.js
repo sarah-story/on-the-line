@@ -4,6 +4,7 @@ var orderId = 0;
 var xhr;
 var ref = new Firebase("https://on-the-line.firebaseio.com/sqare");
 var orderRef = new Firebase("https://on-the-line.firebaseio.com/order")
+var completed = new Firebase("https://on-the-line.firebaseio.com/completed")
 var newItems = false;
 var queue = document.getElementById('queue');
 var first1 = true;
@@ -78,5 +79,8 @@ $(document).on('click','.box',function()
     this.remove();
     var j = $(this).attr('id');
     var boxRef = new Firebase ("https://on-the-line.firebaseio.com/order/"+orders[j].key);
-    boxRef.remove();
+    boxRef.on('value', function(snapshot) {
+    	completed.push(snapshot.val());
+    	boxRef.remove();
+    })
 });
