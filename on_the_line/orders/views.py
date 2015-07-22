@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from bottle import post, request, run
 from hashlib import sha1
-from models.py import Order
+from .models import Order
 import hmac, httplib, json, locale, datetime
 
 # Create your views here.
