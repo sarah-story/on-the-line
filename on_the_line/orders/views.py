@@ -3,8 +3,10 @@ from bottle import post, request, run
 from hashlib import sha1
 from .models import Order
 import hmac, httplib, json, locale, datetime
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
 
-# Create your views here.
+@csrf_exempt
 def get_orders(request):
     access_token = 'b0y7fYe4mEiskcVybKylkw'
     request_headers = { 'Authorization': 'Bearer ' + access_token,
@@ -22,7 +24,7 @@ def get_orders(request):
         items_list += str(round(item['quantity'])) + " " + item['name'] + "<br>"
     i = Order(items = items_list, order_time = datetime.datetime.now())
     i.save()
-    return
+    return HttpResponse("")
 
 
 
