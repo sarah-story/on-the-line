@@ -1,0 +1,114 @@
+body {
+	background: #8ECBD0;
+	font-family: 'Cabin', sans-serif;
+}
+
+nav {
+	background: #F9F8F3;
+	height: 70px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-shadow: 5px 0 5px;
+}
+
+nav div#title {
+	font-family: 'Lobster', cursive;
+	display: inline;
+	float: right;
+	margin: auto;
+	padding-right: 2%;
+	font-size: 2.5em;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	vertical-align: center;
+	color: #4B4843;
+}
+
+nav div.button {
+	display: inline;
+	float:left;
+	text-align: center;
+	margin: 25px 5px 0 5px;
+}
+
+div.button a {
+	text-decoration: none;
+	color: #4B4843;
+	padding: 10px;
+}
+
+div.button a.home:hover, div.button .activeHome {
+	background: #3A7F86;
+	color: #F9F8F3;
+	box-shadow: 5px 0 5px;
+	border-radius: 2px;
+}
+
+div.button a.completed:hover, div.button .activeCompleted {
+	background: #aaa59d;
+	color: #F9F8F3;
+	box-shadow: 5px 0 5px;
+	border-radius: 2px;
+}
+
+
+
+footer {
+	background: #4B4843;
+	height: 50px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	box-shadow: 0 0 5px black;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+}
+
+#queue, #completedQueue{
+	margin: 80px auto 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    float: left;
+    clear: left;
+    justify-content: center;
+    width: 100%;
+}
+
+.box, .completedBox {
+	list-style: none;
+	color: #F9F8F3;
+	float: left;
+	margin: 10px;
+	padding: 30px;
+	display: flex;
+	flex-flow: column;
+	min-width: 15%;
+	max-width: 15%;
+	margin: 1%;
+	line-height: 2em;
+	font-size: 1.5em;
+	font-weight: 300;
+	box-shadow: 0 0 5px black;
+}
+
+.box {
+	background: #3A7F86;
+}
+
+.completedBox {
+	background: #aaa59d;
+}
+
+.note {
+	font-size: .75em;
+	line-height: 1em;
+	color: #4B4843;
+}

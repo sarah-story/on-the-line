@@ -1,0 +1,31 @@
+<head>
+    <title>On The Line</title>
+    {% load static %}
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'orders/styles.css' %}">
+</head>
+
+<body>
+    <nav>
+		<div class = 'button'><a class = 'activeHome' href = '/orders/'>Home</a></div>
+		<div class = 'button'><a class = 'completed' href = '/orders/completed'>Completed Orders</a></div>
+		<div id = 'title'>
+			On The Line
+		</div>
+	</nav>
+    <div id="main">
+        <div id="queue">
+            {% for order in listed_order %}
+                <div class="box" id="{{ order.1 }}" number="{{ order.2 }}">
+                {% for item in order.0 %}
+                    <div class="item">{{ item|safe }}</div>
+                {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="{% static 'orders/app.js' %}"></script>
+</body>
